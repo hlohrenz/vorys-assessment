@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import 'highcharts/css/highcharts.css';
 
 @import 'tw-animate-css';
 
@@ -8,10 +9,9 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-    --font-sans:
-        Instrument Sans, ui-sans-serif, system-ui, sans-serif,
-        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-        'Noto Color Emoji';
+    --font-sans: Instrument Sans, ui-sans-serif, system-ui, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
@@ -82,10 +82,9 @@
 @layer utilities {
     body,
     html {
-        --font-sans:
-            'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
-            'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-            'Noto Color Emoji';
+        --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
     }
 }
 
@@ -124,6 +123,7 @@
     --sidebar-border: hsl(0 0% 91%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
     --sidebar: hsl(0 0% 98%);
+    --highcharts-text-color: #333333;
 }
 
 .dark {
@@ -160,13 +160,31 @@
     --sidebar-border: hsl(0 0% 15.9%);
     --sidebar-ring: hsl(217.2 91.2% 59.8%);
     --sidebar: hsl(240 5.9% 10%);
+    --highcharts-text-color: #FFFFFF;
 }
 
 @layer base {
     * {
         @apply border-border outline-ring/50;
     }
+
     body {
         @apply bg-background text-foreground;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: var(--font-weight-black);
+    }
+
+    h1 {
+        font-size: var(--text-2xl);
+    }
+
+    h2 {
+        font-size: var(--text-xl);
+    }
+
+    h3 {
+        font-size: var(--text-lg);
     }
 }

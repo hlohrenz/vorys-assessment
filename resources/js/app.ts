@@ -5,6 +5,11 @@ import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';
 import { createApp, h } from 'vue';
 import { initializeTheme } from './composables/useAppearance';
+import Highcharts from 'highcharts';
+import { chartConfig } from './lib/chart-utils';
+
+// Apply global chart config
+Highcharts.setOptions(chartConfig);
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
