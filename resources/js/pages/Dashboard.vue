@@ -16,9 +16,10 @@ const breadcrumbs: BreadcrumbItem[] = [
 ];
 
 // Todo: Allow user to control widgets on dashboard? Set cookie.
+// Each widget is it's own component so you can map widget cookie array to a Vue component that calls their own API endpoint: ['monthly-sales', 'open-deals', 'active-accounts', 'daily-sales']
 // Dynamically load components so they are lazy loaded and don't run fetch data right away until they are rendered
 // Also agg data endpoint would be better than multiple API calls in individual widgets
-// If using Inertia, just send data from controller instead of hitting API endpoints
+// If using Inertia, just send data from controller instead of hitting API endpoints, then you could reuse widget components for different keys since they won't hit individual endpoints
 </script>
 
 <template>
