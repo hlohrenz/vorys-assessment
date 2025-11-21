@@ -1,9 +1,9 @@
-export type AggSale = {
+export type AggDataPoint = {
     label: string;
     value: number;
 }
 
-export type AggDateSales = {
+export type AggDataPoints = {
     label: string;
     values: {
         [key: string]: number;

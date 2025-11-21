@@ -4,11 +4,11 @@ import WidgetContent from '@/components/ui/widget/WidgetContent.vue';
 import WidgetContentLoading from '@/components/ui/widget/WidgetContentLoading.vue';
 import WidgetHeader from '@/components/ui/widget/WidgetHeader.vue';
 import { useWidgetData } from '@/composables/useWidgetData';
-import { AggDateSales } from '@/types/dashboard/agg';
+import { AggDataPoints } from '@/types/dashboard/agg';
 import { computed } from 'vue';
 import Chart from '@/components/ui/chart/Chart.vue';
 
-const { data, isLoading } = useWidgetData<AggDateSales>(
+const { data, isLoading } = useWidgetData<AggDataPoints>(
     '/api/metrics/daily-sales',
 );
 const categories = computed(() => Object.keys(data.value?.values || {}));
